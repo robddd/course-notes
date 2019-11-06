@@ -33,11 +33,12 @@ csv in python would take 1000's of times longer.
 
 Key performance thing when specifying datatype is to use the smallest number of bits to represent the comment.
 
-Integer:
-2 ^ 8 = 256
-2 ^ 16 = 65,536
-2 ^ 32 = 4E9 (4 billion)
-2 ^ 64 = 1E19 (10,000,000,000,000,000,000)
+|Integer | n |
+|--------|--------|
+|2 ^ 8 | 256 |
+|2 ^ 16 | 65,536 |
+|2 ^ 32 | 4E9 (4 billion) |
+|2 ^ 64 | 1E19 (10,000,000,000,000,000,000) |
 
 With large datasets, the key performance consideration is reading and writing to to ram. Often the key thing is to have the right data type, especially if you can use SIMD (Single Instruction Multiple Data) Vectorized Code. Can fit more numbers into a single vector and run faster.
 
