@@ -1,9 +1,9 @@
 # Fastai - Machine Learning
 ## Lesson 4 - Feature Importance, Tree Interpreter
 
-Hyper parameters.
+Hyper parameters:
 
-set_rf_samples -> how many rows are used in each tree. The depth of the tree doesn’t get too affected by this parameter, formula for max depth is
+`set_rf_samples` -> how many rows are used in each tree. The depth of the tree doesn’t get too affected by this parameter, formula for max depth is
 
 Log 2 (n_rows)
 
@@ -15,31 +15,31 @@ Purpose of random forest, each estimator is as accurate as possible, and each es
 
 Reset_rf_samples() # will cause it to bootstrap, to sample a new data set as big as the original, with replacement.
 
-Min_samples_leaf - each time we double the min samples leaf, we remove one layer of depth of the tree.
+`min_samples_leaf` - each time we double the min samples leaf, we remove one layer of depth of the tree.
 
 If we have a 20k sample and a min samples leaf of 2, we will have a max depth of log b2 (20K) - 1
 
 The number of max leaves is 20k / min samples, so in this case of man sample leaf of 2, max leaves is 10K
 
-Max_features - the column sub sample for each decision point. This will again mean the individual trees will be less accurate, but the trees will be more varied, think of if there is one super powerful variable which every tree uses to split at the start
+`max_features` - the column sub sample for each decision point. This will again mean the individual trees will be less accurate, but the trees will be more varied, think of if there is one super powerful variable which every tree uses to split at the start
 
-N_jobs - how many cores you are using, default is to only use one. Seems to be diminishing returns after using 8ish cores.
+`n_jobs` - how many cores you are using, default is to only use one. Seems to be diminishing returns after using 8ish cores.
 
-Oob score - out of bag score. May take some more time and get a val score without a val set.
+`oob score` - out of bag score. May take some more time and get a val score without a val set.
 
-Fast ai library is not available in the kaggle kernels, but if you look inside of the fastai library, you can see that the functions are just a few lines of code, so they can be easily copied
+Fast ai library is not available in the kaggle kernels, but if you look inside of the fastai library, you can see that the functions are just a few lines of code, so they can be easily copied.
 
-Run some more hyper parameter cross validations on the santander dataset, run correlations across different variables
+Run some more hyper parameter cross validations on the santander dataset, run correlations across different variables.
 
-Interactions between variables is massively important. For example, we have year made and sale date, if we lose one of these columns, we lose the ability to calculate the age of the machinery at sale time.
+**Interactions between variables is massively important. For example, we have year made and sale date, if we lose one of these columns, we lose the ability to calculate the age of the machinery at sale time.**
 
-If we know the exact variables you need,  interactions between variables and exact transformations needed for the variables, ahead of time. We can easily create a LR which is as good as any random forest. But… We never know that. 
+If we know the exact variables you need, interactions between variables and exact transformations needed for the variables, ahead of time. We can easily create a LR which is as good as any random forest. But… We never know that. 
 
 The truth is there are many many things interacting in very subtle ways.
 
-Having 2 or more variables that are correlated strongly to each other, will mean that this feature importance method will underestimate how important each variable is, for example if you have year twice, and you take one away, you will not lose much, if you take away both then you will lose a lot.
+Having two or more variables that are correlated strongly to each other, will mean that this feature importance method will underestimate how important each variable is, for example if you have year twice, and you take one away, you will not lose much, if you take away both then you will lose a lot.
 
-With interaction if you take one away you will lose a lot, maybe looking at combos will do a better job of finding correlated variables than of finding variable interactions… Also once you get a handle on two variables. Could look at 3 or more?
+With interaction if you take one away you will lose a lot, maybe looking at combos will do a better job of finding correlated variables than of finding variable interactions. Also once you get a handle on two variables. Could look at 3 or more?
 
 If you can see removing a model keeps your r-squared and your error score at the same or even improves it, then you can remove the variable, with the benefit of making your model simpler. Jeremy's example was by removing some weak variables, looking at how strong the variables were, after removing a lot of weak ones, the #1 variable became much much stronger than before.
 
