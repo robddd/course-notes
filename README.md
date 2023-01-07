@@ -4,3 +4,4 @@ This is a collection of notes I have taken from Data Science and Machine Learnin
 
 ## Courses
 * [Fastai - Machine Learning](courses/fastai_ml/fastai_ml_home.md)
+* [Andrej Karpathy - YouTube Videos](courses/karpathy/karpathy_vids.md)
