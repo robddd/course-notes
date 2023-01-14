@@ -1,5 +1,6 @@
 # Andrey Karpathy
 ## The spelled-out intro to neural networks and backpropagation: building micrograd
+## Part 1 - Manual Backprop
 [YouTube Link to Video](https://www.youtube.com/watch?v=VMj-3S1tku0)
 
 This video was excellent, I probably spent 15-20 hours going through it all and coding up all the examples alongside watching it. As well as making Neural Nets simple to understand there are also some good explanations and examples of Object Oriented Programming (OOP) in Python.
