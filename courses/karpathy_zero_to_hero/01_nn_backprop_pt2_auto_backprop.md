@@ -501,7 +501,7 @@ Step 1900 - Loss 2.564321728861113e-05
 Step 2000 - Loss 2.439159456846185e-05
 ```
 Our loss is decreasing - We are winning!
-```
+
 Look at our predictions at this point
 ```
 ypred
@@ -521,6 +521,6 @@ Out
 ```
 [1.0, -1.0, -1.0, 1.0]
 ```
-We have learned a model that fits well to these data points...
+We have trained a model that fits well to these data points...
 
 End of first video
